@@ -6,9 +6,6 @@ services:
     ports:
       - '5672:5672'
       - '15672:15672'
-    volumes:
-      - ./rabbitmq/data/:/var/lib/rabbitmq/
-      - ./rabbitmq/log/:/var/log/rabbitmq/
     container_name: 'rabbitmq-container'
     environment:
       - RABBITMQ_DEFAULT_USER=admin
