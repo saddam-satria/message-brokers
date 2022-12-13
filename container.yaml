@@ -26,8 +26,8 @@ services:
     build:
       context: service-2
     ports:
-      - '5000:5000'
+      - '5001:5001'
     environment:
-      - PORT=5000
+      - PORT=5001
       - RABBITMQ=amqp://admin:admin@rabbitmq-service:5672
     container_name: 'service-consumer-container'
