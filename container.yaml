@@ -15,7 +15,7 @@ services:
       - RABBITMQ_DEFAULT_PASS=admin
   service-producer:
     build:
-      context: ./service-1/Dockerfile
+      context: service-1
     ports:
       - '5000:5000'
     environment:
@@ -24,7 +24,7 @@ services:
     container_name: 'service-producer-container'
   service-consumer:
     build:
-      context: ./service-2/Dockerfile
+      context: service-2
     ports:
       - '5000:5000'
     environment:
