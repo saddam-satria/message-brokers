@@ -14,7 +14,8 @@ services:
       - RABBITMQ_DEFAULT_USER=admin
       - RABBITMQ_DEFAULT_PASS=admin
   service-producer:
-    build: service-1/Dockerfile
+    build:
+      context: service-1/Dockerfile
     ports:
       - '5000:5000'
     environment:
@@ -22,7 +23,8 @@ services:
       - RABBITMQ=amqp://admin:admin@rabbitmq-service:5672
     container_name: 'service-producer-container'
   service-consumer:
-    build: service-1/Dockerfile
+    build:
+      context: service-2/Dockerfile
     ports:
       - '5000:5000'
     environment:
