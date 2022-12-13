@@ -9,7 +9,7 @@ services:
     volumes:
       - rabbitmq/data/:/var/lib/rabbitmq/
       - rabbitmq/log/:/var/log/rabbitmq
-    container-name: 'rabbitmq-container'
+    container_name: 'rabbitmq-container'
     environment:
       - RABBITMQ_DEFAULT_USER=admin
       - RABBITMQ_DEFAULT_PASS=admin
@@ -20,7 +20,7 @@ services:
     environment:
       - PORT=5000
       - RABBITMQ=amqp://admin:admin@rabbitmq-service:5672
-    container-name: 'service-producer-container'
+    container_name: 'service-producer-container'
   service-consumer:
     build: service-1/Dockerfile
     ports:
@@ -28,4 +28,4 @@ services:
     environment:
       - PORT=5000
       - RABBITMQ=amqp://admin:admin@rabbitmq-service:5672
-    container-name: 'service-consumer-container'
+    container_name: 'service-consumer-container'
