@@ -18,6 +18,8 @@ services:
     environment:
       - PORT=5000
       - RABBITMQ=amqp://admin:admin@rabbitmq-service:5672
+    depends_on:
+      - rabbitmq-service
     container_name: 'service-producer-container'
   service-consumer:
     build:
@@ -27,4 +29,6 @@ services:
     environment:
       - PORT=5001
       - RABBITMQ=amqp://admin:admin@rabbitmq-service:5672
+    depends_on:
+      - rabbitmq-service
     container_name: 'service-consumer-container'
